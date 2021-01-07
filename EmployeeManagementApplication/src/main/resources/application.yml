@@ -1,0 +1,66 @@
+server:
+  port: 8083
+  
+spring:
+  profiles:
+    active: dev
+    
+---
+spring:
+  profiles: dev
+  
+# Datasource  
+  datasource:
+    url: jdbc:h2:file:D:/CodeSpace/Workspace/H2_DB/employee_app
+    ## url: jdbc:h2:file:~/employee_app
+    username: sa
+    password: 
+    driverClassName: org.h2.Driver    
+  jpa:
+    databasePlatform: org.hibernate.dialect.H2Dialect
+    showSql: true
+    properties:
+      hibernate:
+        formatSql: true
+        ## hbm2ddl:
+          ## auto: create
+# H2
+  h2:    console:      enabled: true
+      path: /h2-console
+# Liquibase
+  liquibase:
+    change-log: classpath:/db-scripts/master-scripts.xml
+# JWT        
+  jwt:
+    secret: hash-key-dev
+    
+---
+spring:
+  profiles: prod
+  
+# Datasource  
+  datasource:
+    ## url: jdbc:h2:file:D:/CodeSpace/Workspace/H2_DB/employee_app
+    url: jdbc:h2:file:~/employee_app
+    username: sa
+    password: 
+    driverClassName: org.h2.Driver    
+  jpa:
+    databasePlatform: org.hibernate.dialect.H2Dialect
+    showSql: true
+    properties:
+      hibernate:
+        formatSql: true
+        ## hbm2ddl:
+          ## auto: create
+# H2
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+# Liquibase
+  liquibase:
+    change-log: classpath:/db-scripts/master-scripts.xml
+# JWT        
+  jwt:
+    secret: hash-key-prod

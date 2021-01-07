@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="admin" id="2">
+        
+        <insert tableName="user">
+            <column name="id" valueNumeric="1"/>
+            <column name="username" value="user1"/>
+            <column name="password" value="$2a$04$Ye7/lJoJin6.m9sOJZ9ujeTgHEVM4VXgI2Ingpsnf9gXyXEXf/IlW"/>
+            <column name="age" value="29"/>
+        </insert>
+        <insert tableName="user">
+            <column name="id" valueNumeric="2"/>
+            <column name="username" value="user2"/>
+            <column name="password" value="$2a$04$StghL1FYVyZLdi8/DIkAF./2rz61uiYPI3.MaAph5hUq03XKeflyW"/>
+            <column name="age" value="30"/>
+        </insert>
+        <insert tableName="user">
+            <column name="id" valueNumeric="3"/>
+            <column name="username" value="user3"/>
+            <column name="password" value="$2a$04$Lk4zqXHrHd82w5/tiMy8ru9RpAXhvFfmHOuqTmFPWQcUhBD8SSJ6W"/>
+            <column name="age" value="31"/>
+        </insert>
+        <insert tableName="role">
+            <column name="id" valueNumeric="4"/>
+            <column name="description" value="Admin role"/>
+            <column name="name" value="ADMIN"/>
+        </insert>
+        <insert tableName="role">
+            <column name="id" valueNumeric="5"/>
+            <column name="description" value="User role"/>
+            <column name="name" value="USER"/>
+        </insert>
+        <insert tableName="user_roles">
+            <column name="user_id" valueNumeric="1"/>
+            <column name="role_id" value="4"/>
+        </insert>
+        <insert tableName="user_roles">
+            <column name="user_id" valueNumeric="2"/>
+            <column name="role_id" value="5"/>
+        </insert>       
+        
+        <!-- <insert tableName="address">
+            <column name="id" valueNumeric="1"/>
+            <column name="street" value="Koramangala"/>
+            <column name="city" value="Bangalore"/>
+            <column name="state" value="Karnataka"/>
+            <column name="country" value="India"/>
+            <column name="zipcode" value="638458"/>
+        </insert>
+        <insert tableName="address">
+            <column name="id" valueNumeric="2"/>
+            <column name="street" value="Saravanampatti"/>
+            <column name="city" value="Coimbatore"/>
+            <column name="state" value="Tamilnadu"/>
+            <column name="country" value="India"/>
+            <column name="zipcode" value="638458"/>
+        </insert>
+        
+        <insert tableName="employee">
+            <column name="id" valueNumeric="1"/>
+            <column name="first_name" value="Satheeshkumar"/>
+            <column name="last_name" value="V"/>
+            <column name="mobile_number" value="88888444422"/>
+            <column name="email_id" value="satheesh@xyz.com"/>
+            <column name="designation" value="Java Developer"/>
+            <column name="salary" valueNumeric="10000"/>
+            <column name="address_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="employee">
+            <column name="id" valueNumeric="2"/>
+            <column name="first_name" value="Sureshkumar"/>
+            <column name="last_name" value="V"/>
+            <column name="mobile_number" value="8765123455"/>
+            <column name="email_id" value="suresh@xyz.com"/>
+            <column name="designation" value="Python Developer"/>
+            <column name="salary" valueNumeric="10000"/>
+            <column name="address_id" valueNumeric="2"/>
+        </insert> -->
+    </changeSet>
+</databaseChangeLog>
